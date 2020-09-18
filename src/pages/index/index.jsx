@@ -8,12 +8,19 @@ import ReactEcharts from 'echarts-for-react';
 import style from './index.module.css';
 import { get_home } from '../../utils/api';
 
+/*
+ * @Author: lijianqiang01
+ * @Email: lijianqiang01@baidu.com
+ * @Date: 2020-09-18 16:11:34
+ * @Last Modified by:   lijianqiang01
+ * @Last Modified time: 2020-09-18 16:11:34
+ * @Description: 封装首页
+ */
 
 class Index extends Component {
 
     constructor(props) {
         super(props);
-        this.table = React.createRef();
         this.state = {
             option: {},
         };
