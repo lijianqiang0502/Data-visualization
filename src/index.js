@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Index from './src/index'
+import Index from './index/index'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
