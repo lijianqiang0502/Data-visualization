@@ -1,4 +1,121 @@
-.bar{
-    width: 400px;
+.contentBox{
+    display: flex;
+    width: 100vw;
+    min-width: 1600px;
+    height: 100%;
+    background: #0c0b30;
+    padding: 1% 5%;
+}
+.contentBoxLeft{
+    width: 25%;
+    height: 900px;
+}
+.contentBoxCenter{
+    margin-left: 1%;
+    width: 48%;
+    height: 900px;
+}
+.contentBoxRight{
+    margin-left: 1%;
+    width: 25%;
+    height: 900px;
+}
+.contentBoxLeftTop{
+    width: 100%;
+    height: 240px;
+}
+.contentBoxLeftCenter{
+    margin-top: 10px;
+    width: 100%;
+    height: 240px;
+}
+.contentBoxLeftBottom{
+    margin-top: 10px;
+    width: 100%;
     height: 400px;
+}
+.ltHeader{
+    display: flex;
+    color: white;
+    font-size: 20px;
+    height: 50px;
+}
+.ltHeaderLeft{
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+}
+.ltHeaderRight{
+    width: 50%;
+    text-align: center;
+    background: rgba(255, 255, 255, .1);
+    line-height: 50px;
+    cursor: pointer;
+}
+.ltHeaderRightNoCursor{
+    width: 50%;
+    text-align: center;
+    background: rgba(255, 255, 255, .1);
+    line-height: 50px;
+}
+.ltHeaderRight::before{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 25px solid transparent;
+    border-left: 10px solid #232545;
+    border-bottom: 25px solid #232545;
+}
+.ltHeaderRightNoCursor::before{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 25px solid transparent;
+    border-left: 10px solid #232545;
+    border-bottom: 25px solid #232545;
+}
+.ltContet{
+    color: white;
+    font-size: 20px;
+}
+.ltContetTop{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 50px;
+    margin-left: 30px;
+    font-family: monospace;
+    font-weight: 700;
+    height: 20%;
+}
+.ltContetTitle{
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 30px;
+    font-family: monospace;
+    font-weight: 700;
+}
+.ltContetNum{
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 10px;
+    font-family: monospace;
+    font-weight: 700;
+}
+.lcBox{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.lcBoxItem{
+    width: 50%;
+    height: 50%;
 }

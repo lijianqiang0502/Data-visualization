@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import 'echarts/lib/chart/line';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
@@ -7,13 +7,15 @@ import 'echarts/lib/component/markPoint';
 import ReactEcharts from 'echarts-for-react';
 import style from './index.module.css';
 import { get_home } from '../../utils/api';
+import ContentBox from '../components/content-box';
+import Pie from './components/pie';
 
 /*
  * @Author: lijianqiang01
  * @Email: lijianqiang01@baidu.com
  * @Date: 2020-09-18 16:11:34
- * @Last Modified by:   lijianqiang01
- * @Last Modified time: 2020-09-18 16:11:34
+ * @Last Modified by: lijianqiang01
+ * @Last Modified time: 2020-09-18 21:18:30
  * @Description: 封装首页
  */
 
@@ -23,22 +25,91 @@ class Index extends Component {
         super(props);
         this.state = {
             option: {},
+            totalTitle: "全球总感染人数",
+            totalChange: "切换全国",
         };
     }
 
     async componentDidMount() {
         const options = await get_home('/time', 'get', {a:1});
         // 指定图表的配置项和数据
-        this.setState({
+        this.setState(state => ({
             option: options,
-        });
+        }));
+    }
+
+    handleChangeCountry = () => {
+        this.setState(state => {
+            return state.totalTitle.indexOf("球") > -1
+            ?
+            {
+                totalTitle: "全国总感染人数",
+                totalChange: "切换全球",
+            }
+            :
+            {
+                totalTitle: "全球总感染人数",
+                totalChange: "切换全国",
+            }
+        })
     }
 
     render() {
+        const { option, totalTitle, totalChange } = this.state;
+
         return (
-            <div>
-                <ReactEcharts className={style.bar} option={this.state.option} />
-            </div>
+            <Fragment>
+                <div className={style.contentBox}>
+                    <div className={style.contentBoxLeft}>
+                        <div className={style.contentBoxLeftTop}>
+                            <ContentBox>
+                                <div className={style.ltHeader}>
+                                    <div className={style.ltHeaderLeft}>{totalTitle}</div>
+                                    <div onClick={this.handleChangeCountry} className={style.ltHeaderRight}>{totalChange}</div>
+                                </div>
+                                <div className={style.ltContet}>
+                                    <div className={style.ltContetTop}>19998</div>
+                                    <div className={style.ltContetTitle}>今日
+                                        <div className={style.ltContetNum}>9999</div>
+                                    </div>
+                                    <div className={style.ltContetTitle}>昨日
+                                        <div className={style.ltContetNum}>9999</div>
+                                    </div>
+                                    <div className={style.ltContetTitle}>近七日
+                                        <div className={style.ltContetNum}>9999</div>
+                                    </div>
+                                    <div className={style.ltContetTitle}>近一月
+                                        <div className={style.ltContetNum}>9999</div>
+                                    </div>
+                                </div>
+                            </ContentBox>
+                        </div>
+                        <div className={style.contentBoxLeftCenter}>
+                            <ContentBox>
+                            <div className={style.ltHeader}>
+                                    <div className={style.ltHeaderLeft}>男女分布</div>
+                                    <div className={style.ltHeaderRightNoCursor}>年龄分布</div>
+                                </div>
+                                <div className={style.lcBox}>
+                                    <div className={style.lcBoxItem}><Pie /></div>
+                                    <div className={style.lcBoxItem}><Pie /></div>
+                                </div>
+                            </ContentBox>
+                        </div>
+                        <div className={style.contentBoxLeftBottom}>
+                            <ContentBox>
+                                9101
+                            </ContentBox>
+                        </div>
+                    </div>
+                    <div className={style.contentBoxCenter}>
+                        <ContentBox />
+                    </div>
+                    <div className={style.contentBoxRight}>
+                        <ContentBox />
+                    </div>
+                </div>
+            </Fragment>
         )
     }
 }

@@ -1,0 +1,44 @@
+.box{
+    position: relative;
+    border: 1px solid #2e42af;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
+}
+.leftTop{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 0;
+    border-left: 3px solid #0026ff;
+    border-top: 3px solid #0026ff;
+}
+.rightTop{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-right: 3px solid #0026ff;
+    border-top: 3px solid #0026ff;
+}
+.leftBottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-left: 3px solid #0026ff;
+    border-bottom: 3px solid #0026ff;
+}
+.rightBottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    border-right: 3px solid #0026ff;
+    border-bottom: 3px solid #0026ff;
+}
