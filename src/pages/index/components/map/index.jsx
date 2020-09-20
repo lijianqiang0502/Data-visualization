@@ -50,7 +50,7 @@ class Index extends Component {
                     region: geoCoordMap,
                     label: {
                         show: true,
-                        color: '#000',
+                        color: '#fff',
                         emphasis: {
                             show: true,
                             color: '#fff',
@@ -97,7 +97,7 @@ class Index extends Component {
         const {option} = this.state;
         return(
             <Fragment>
-                <ReactEcharts style={{height: 500}} option={option} />
+                <ReactEcharts style={{marginTop: 30,height: 500}} option={option} />
             </Fragment>
         )
     }
