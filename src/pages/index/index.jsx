@@ -9,13 +9,16 @@ import style from './index.module.css';
 import { get_home } from '../../utils/api';
 import ContentBox from '../components/content-box';
 import Pie from './components/pie';
+import Bar from './components/bar';
+import Map from './components/map';
+
 
 /*
  * @Author: lijianqiang01
  * @Email: lijianqiang01@baidu.com
  * @Date: 2020-09-18 16:11:34
- * @Last Modified by: lijianqiang01
- * @Last Modified time: 2020-09-18 21:18:30
+ * @Last Modified by: lijianqiang
+ * @Last Modified time: 2020-09-20 22:02:44
  * @Description: 封装首页
  */
 
@@ -98,12 +101,18 @@ class Index extends Component {
                         </div>
                         <div className={style.contentBoxLeftBottom}>
                             <ContentBox>
-                                9101
+                                <div className={style.mr10}>
+                                    <Bar />
+                                </div>
                             </ContentBox>
                         </div>
                     </div>
                     <div className={style.contentBoxCenter}>
-                        <ContentBox />
+                        <ContentBox>
+                            <div className={style.map}>
+                                <Map />
+                            </div>
+                        </ContentBox>
                     </div>
                     <div className={style.contentBoxRight}>
                         <ContentBox />
