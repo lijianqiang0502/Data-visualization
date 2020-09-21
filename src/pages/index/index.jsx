@@ -11,6 +11,7 @@ import ContentBox from '../components/content-box';
 import Pie from './components/pie';
 import Bar from './components/bar';
 import Map from './components/map';
+import Dotted from './components/dotted';
 
 
 /*
@@ -111,6 +112,9 @@ class Index extends Component {
                         <ContentBox>
                             <div className={style.map}>
                                 <Map />
+                            </div>
+                            <div className={style.dotted}>
+                                <Dotted />
                             </div>
                         </ContentBox>
                     </div>

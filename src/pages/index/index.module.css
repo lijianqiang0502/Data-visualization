@@ -1,11 +1,24 @@
-.contentBox{
-    display: flex;
-    width: 100vw;
-    min-width: 1600px;
-    height: 1000px;
-    background: #0c0b30;
-    padding: 1% 5%;
+@media (max-height: 1000px) {
+    .contentBox{
+        display: flex;
+        width: 100vw;
+        min-width: 1600px;
+        height: 1000px;
+        background: #0c0b30;
+        padding: 1% 5%;
+    }
 }
+@media (min-height: 1001px) {
+    .contentBox{
+        display: flex;
+        width: 100vw;
+        min-width: 1600px;
+        height: 100vh;
+        background: #0c0b30;
+        padding: 1% 5%;
+    }
+}
+
 .contentBoxLeft{
     width: 25%;
     height: 900px;
@@ -125,4 +138,7 @@
 }
 .map{
     height: 500px;
+}
+.dotted{
+    height: 320px;
 }

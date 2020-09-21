@@ -22,7 +22,7 @@ class Index extends Component {
 
         this.setState(state => ({
             option: {
-                backgroundColor: '#252543',
+                backgroundColor: 'transparent',
                 title: {
                     text: '',
                     left: 'center',
