@@ -29,7 +29,7 @@ class Index extends Component {
         super(props);
         this.state = {
             option: {},
-            totalTitle: "全球总感染人数",
+            totalTitle: "全球总人数",
             totalChange: "切换全国",
         };
     }
@@ -47,12 +47,12 @@ class Index extends Component {
             return state.totalTitle.indexOf("球") > -1
             ?
             {
-                totalTitle: "全国总感染人数",
+                totalTitle: "全国总人数",
                 totalChange: "切换全球",
             }
             :
             {
-                totalTitle: "全球总感染人数",
+                totalTitle: "全球总人数",
                 totalChange: "切换全国",
             }
         })

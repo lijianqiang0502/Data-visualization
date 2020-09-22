@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import ReactEcharts from 'echarts-for-react';
-import 'echarts/map/js/china'
+import 'echarts/map/js/world'
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import 'echarts/lib/component/markPoint';
-import {data, geoCoordMap ,convertData} from './config';
+import {data ,convertData} from './config';
 
 
 class Index extends Component {
@@ -46,13 +46,12 @@ class Index extends Component {
                     show:false,
                 },
                 geo: {
-                    map: 'china',
-                    region: geoCoordMap,
+                    map: 'world',
                     label: {
-                        show: true,
+                        show: false,
                         color: '#fff',
                         emphasis: {
-                            show: true,
+                            show: false,
                             color: '#fff',
                         }
                     },

@@ -21,7 +21,6 @@ class Index extends Component {
     componentDidMount() {
 
         let category = [];
-        let dottedBase = +new Date();
         let lineData = [];
         let barData = [];
 
